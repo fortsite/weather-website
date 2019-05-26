@@ -7,13 +7,18 @@ const forecast = (latitude, longitude, callback) => {
     if (error) {
       callback('Unabel to connect mapbox to weather service!', undefined);
     } else if (body.error) {
-      callback('Unable to find location');
+      callback('Unable to find location', undefined);
     } else {
       const { temperature, precipProbability } = body.currently;
       const { summary } = body.daily.data[0];
+
       callback(
         undefined,
-        `${summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% change of rain`
+        `${summary} It is currently ${temperature} degrees out. The high today is ${
+          body.daily.data[0].temperatureHigh
+        } with a low of ${
+          body.daily.data[0].temperatureLow
+        }. There is a ${precipProbability}% change of rain`
       );
     }
   });

@@ -6,6 +6,6 @@
 
 ![alt screenshot app](screenshot.png)
 
-## Deploy on Heroku
+## Deploy to Heroku
 
 [https://fortsite-weather-application.herokuapp.com/](https://fortsite-weather-application.herokuapp.com/)
